@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>roadmap</title>
+    <link rel="stylesheet" href="css/03styleroadmap.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container">
+        <header class="sticky">
+            <nav>
+                <ul id="indexMenu">
+                    <li><a href="00index.html" data-hover="Home">Home</a></li>
+                    <li><a href="01introduce.html" data-hover="introduce">introduce</a></li>
+                    <li><a href="02interest.html" data-hover="interest">interest</a></li>
+                    <li class="current"><a href="03roadmap.html">roadmap</a></li>
+                    <li><a href="04member.html" data-hover="resister">resister</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.instagram.com/hsukan/" target="_blank"><img src="image/인스타.png" alt="인스타"
+                    id="insta"></a>
+            <a href="#"><img src="image/페이스북.png" alt="페이스북" id="facebook"></a>
+            <br><br><br>
+        </header>
+        <section>
+            <div class="container">
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="image/react.png" alt="" class="icon">
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <h1>React</h1><br><br>
+                            <a href="#1" id="readmore">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="image/Go.png" alt="" class="icon">
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <h1>Go</h1><br><br>
+                            <a href="#2" id="readmore">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="face face1">
+                        <div class="content">
+                            <img src="image/github.png" alt="" class="icon">
+                        </div>
+                    </div>
+                    <div class="face face2">
+                        <div class="content">
+                            <h3>Git / GitHub</h3><br><br>
+                            <a href="#3" id="readmore">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <br><br><br><br><br>
+        <br><br id="1">
+        <hr><br><br>
+        <div class="box">
+            <span class="box-caption left-to-right">
+                <h1>React</h1>
+                <img src="image/Virtual DOM.png" alt="" id="reactimg">
+                <div id="reactcont1">
+                    Virtual DOM은 변화가 발생하면, 실제 DOM에 적용되기 전에 Virtual DOM에 우선 적용을 시켜봅니다.
+                    실제 DOM에 바로 적용하나, Virtual DOM에 적용하나 같은 연산 비용이 필요할 거라 생각하실 수 있지만,
+                    Vitual DOM은 랜더링 과정이 필요 없기 때문에 연산 비용이 실제 DOM보다 적습니다.
+                </div>
+                <div id="reactcont2">
+                    <h3>장점</h3>
+                    <li>React 공식 문서 가이드와 방대한 커뮤니티, 자료를 통해 쉽게 접하고 배울 수 있다.</li>
+                    <br>
+                    <li>로직을 분리하는 것이 아닌, Component 하나로 관리를 한다. (이게 view 역할을 담당)</li>
+                    <br>
+                    <li>성능이 뛰어난 가비지 컬랙터, 메모리 관리 기능을 지원한다.</li>
+                    <br>
+                    <li>UI 수정과 재사용성이 좋으며, 코드 가독성을 높일 수 있다.</li>
+                    <br>
+                    <li>다른 framework나 라이브러리와 병행해서 사용할 수 있다.</li>
+                    <br>
+                    <h3>단점</h3>
+                    <li>javascript 배경지식이 필수 선행이다.</li>
+                    <br>
+                    <li>데이터 모델링, 라우팅, Ajax 등 기능 지원이 안된다.</li>
+                    <br>
+                    <li>로딩시간이 길다.</li>
+                </div>
+            </span>
+        </div>
+        <br><br id="2">
+        <hr><br><br>
+        <div class="box">
+            <span class="box-caption right-to-left">
+                <h1 class="box-title">Go</h1>
+                <img src="image/Go-1.jpg" alt="" id="goimg">
+                <img src="image/Go-2.png" alt="" id="goimg2">
+                <div id="gocont1">
+                    <h3>장점</h3>
+                    <li>컴파일 속도가 빠른 언어</li><br>
+                    <li>문법이 간결하고 접근하기 쉽다</li><br>
+                    <li>쓰레드 보다 쉬운 goroutine</li><br>
+                    <li>풍부한 기본 모듈</li><br>
+                    <li>Google이 개발한 언어</li><br>
+                </div>
+                <div id="gocont2">
+                    <h3>전망</h3>
+                    기존 프로그래밍 언어 연구의 성과와 절차를 무시했다는 혹평을 받기도 하는 Go 언어. 
+                    구글의 명성에 힘입어 입지를 굳혔다고 악평을 하는 이도 적지 않습니다. 하지만 
+                    개발자와 현장의 필요에 의해서 만들어진 혁신이 프로그래밍 언어의 새로운 발전 방향을 
+                    제시한 것은 큰 성과라고 볼 수 있습니다. 코드가 방대해져 유지 관리가 힘들어지는 경우를 
+                    중심으로 Go 언어의 사용 빈도가 높아지고 있습니다. 쉽고 간편하게 확장성 있는 시스템 구축이 
+                    가능한 Go 언어의 특성 상 앞으로는 클라우드 환경에서 활용도가 높아질 것으로 예측됩니다.
+                </div>
+            </span>
+        </div>
+        <br><br id="3">
+        <hr><br><br>
+        <div class="box">
+            <span class="box-caption left-to-right">
+                <h1 class="box-title">Git / GitHub</h1>
+                <img src="image/github-2.png" alt="" id="gitimg">
+                <div id="gitcont1">
+                    <h3>Git</h3>
+                    <div>
+                        Git은 버전 관리 소프트웨어입니다.
+                        실수를 해서 그것을 찾아야 하는상황, 아니면 전체 파일이 과거의 한 시점으로 돌아가야 하는 상황을 맞을 수 있는데
+                        Git은 파일에 변경사항이 생길때마다 그것을 기록 해 줍니다.
+                    </div>
+                    <h3>Github</h3>
+                    <div>
+                        GitHub는 여러분들이 Git으로 저장해서 전송한 파일들을 관리할 수 있게하는 서비스입니다. GitHub은 오픈소스이며, 
+                        이곳에 올린 코드들은 모두 공개되어서 다른사람들이 보거나 다운을 받을 수 있습니다.
+                    </div>
+                </div>
+                <div id="gitcont2">
+                    <h3>사용해야 하는 이유</h3>
+                    팀 프로젝트를 할 때 프로젝트에 특정한 변화를 줄때마다 파일을 저장하고 팀원들에게 메일을 보내야하는 수고를
+                    Git과 GitHub는 더 편하고 효율적으로 일하게 해줍니다.
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="topfix">
+        <a href="#top">TOP</a>
+    </div>
+</body>
+
+</html>

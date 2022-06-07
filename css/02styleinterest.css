@@ -1,0 +1,383 @@
+html {
+	background-color: white;
+	scroll-behavior: smooth;
+	font-family: 'Roboto Mono';
+}
+
+body {
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+	color: #222;
+	background: #efefef;
+	border: 2px solid rgba(0, 0, 0, 0.342);
+}
+
+#insta {
+	position: absolute;
+	width: 35px;
+	right: 10px;
+	top: 10px;
+
+}
+
+#facebook {
+	position: absolute;
+	width: 25px;
+	right: 58px;
+	top: 15px;
+}
+
+#indexMenu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 50px;
+	background: #c8cacc;
+	border-bottom: 1px solid #333;
+	margin: 0;
+	padding: 10px 16px 0;
+	list-style: none;
+}
+
+#indexMenu a::before {
+	position: absolute;
+	top: -9px;
+	left: 35px;
+	overflow: hidden;
+	padding: 10px 0;
+	max-width: 0;
+	color: #000000;
+	content: attr(data-hover);
+	transition: max-width 1s;
+}
+
+#indexMenu a:hover::before {
+	max-width: 100%;
+}
+
+#indexMenu li {
+	float: left;
+	margin: 0 20px 0 0;
+	position: relative;
+	padding: 0;
+}
+
+#indexMenu a {
+	display: block;
+	/* color: #000000b0; */
+	color: #fff;
+	text-decoration: none;
+	padding: 0 35px;
+	line-height: 50px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 1.2em;
+	/* background: rgb(211, 210, 235); */
+	background-color: rgb(212, 227, 255);
+	border: 1px solid #333;
+	border-bottom: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	/* position:relative; */
+}
+
+#indexMenu li.current a {
+	background: #efefef;
+	color: #222;
+	height: 50px;
+	text-shadow: #fff 0 1px 0;
+}
+
+section {
+	height: 5700px;
+}
+
+.sticky {
+	position: sticky;
+	top: 0px;
+	z-index: 999;
+	/* z축기준 값이 클수록 위에 위치 */
+}
+
+.topfix {
+	width: 75px;
+	height: 75px;
+	background-color: lightgrey;
+	right: 20px;
+	bottom: 70px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	position: fixed;
+}
+
+.topfix a {
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.836);
+}
+
+.wrapper {
+	position: relative;
+	padding: 50px;
+	height: 300px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.box1 {
+	width: 200px;
+	height: 380px;
+	margin: 50px;
+}
+
+.box2 {
+	width: 200px;
+	height: 380px;
+	margin: 50px;
+}
+
+.box3 {
+	width: 200px;
+	height: 380px;
+	margin: 50px;
+}
+
+#img1 {
+	width: 100%;
+	transition-duration: 1s;
+}
+
+#img2 {
+	width: 100%;
+	transition-duration: 1s;
+}
+
+#img3 {
+	width: 100%;
+	height: 250px;
+	transition-duration: 1s;
+}
+
+.box1:hover img {
+	transform: rotateY(180deg);
+	opacity: 0;
+}
+
+.box2:hover img {
+	transform: rotateY(180deg);
+	opacity: 0;
+}
+
+.box3:hover img {
+	transform: rotateY(180deg);
+	opacity: 0;
+}
+
+.box1:hover {
+	background: url("../image/Exercise.png");
+	background-size: cover;
+	height: 250px;
+	opacity: 1;
+}
+
+.box2:hover {
+	background: url("../image/Movie.png");
+	background-size: cover;
+	height: 250px;
+	opacity: 1;
+}
+
+.box3:hover {
+	background: url("../image/Cafe.png");
+	background-size: cover;
+	height: 250px;
+	opacity: 1;
+}
+
+/* ------------------- */
+#contentbox1 {
+	height: 500px;
+	background-color: white;
+	position: relative;
+
+}
+
+#contentbox2 {
+	height: 2100px;
+	background-color: white;
+	position: relative;
+}
+
+#contentbox3 {
+	height: 2400px;
+	background-color: white;
+	position: relative;
+}
+#exercise1 {
+	margin-left: 30px;
+	display: inline;
+	position: absolute;
+	width: 250px;
+	height: 255px;
+	top: 55px;
+	right: 50px;
+	padding: 70px;
+	color: rgb(0, 0, 0);
+	background-color: rgb(250, 249, 249);
+	border: 3px solid rgba(0, 0, 0, 0.651);
+	border-radius: 10%;
+}
+
+.movie {
+	position: relative;
+}
+
+.movieimg {
+	border-radius: 5%;
+	margin: 40px 40px 40px 80px;
+	width: 330px;
+	height: 420px;
+	padding: 10px;
+	border: 2px solid lightgray;
+}
+
+.moviecont {
+	border-radius: 5%;
+	display: inline;
+	position: absolute;
+	border: 2px solid #efefef;
+	width: 350px;
+	height: 400px;
+	top: 45px;
+	right: 90px;
+	padding: 20px;
+	line-height: 30px;
+}
+
+.cafebox {
+	display: block;
+	position: relative;
+	margin: 20px 0 20px 0;
+}
+
+.cafe {
+	border-radius: 5%;
+	margin: 60px 60px 0 60px;
+	width: 380px;
+	height: 350px;
+	padding: 10px;
+	border: 2px solid lightgray;
+}
+
+#cafecont {
+	border-radius: 5%;
+	display: inline;
+	position: absolute;
+	border: 2px solid #efefef;
+	width: 400px;
+	height: 350px;
+	top: 50px;
+	right: 50px;
+	padding: 20px;
+	line-height: 30px;
+	margin-left: 100px;
+}
+
+/* ----- */
+/* INPUT 가리기 */
+.section [id*="slide"] {
+	display: none;
+}
+
+.section .slidewrap {
+	width: 400px;
+	height: 400px;
+	overflow: hidden;
+	position: relative;
+	border: 3px solid rgba(0, 0, 0, 0.685);
+	background-color: rgb(250, 249, 249);
+	border-radius: 10%;
+	top: 50px;
+	left: 60px;
+}
+
+.section .slidelist {
+	white-space: nowrap;
+	font-size: 0;
+}
+
+.section .slidelist>li {
+	display: inline-block;
+	vertical-align: middle;
+	width: 100%;
+	transition: all .5s;
+}
+
+.section .slidelist>li>a {
+	display: block;
+	position: relative;
+}
+
+/* 좌우로 넘기는 LABEL버튼에 대한 스타일 */
+.section .slide-control label {
+	position: absolute;
+	z-index: 1;
+	top: 43%;
+	padding: 30px;
+	cursor: pointer;
+}
+
+.section .slide-control .left {
+	left: 0px;
+	background: url('../image/left.png') center center / 100% no-repeat;
+}
+
+.section .slide-control .right {
+	right: 0px;
+	background: url('../image/right.png') center center / 100% no-repeat;
+}
+
+.section .slide-control [class*="control"] {
+	display: none;
+}
+
+/* INPUT이 체크되면 변화값이 li까지 전달되는 스타일 */
+.section [id="slide01"]:checked~.slidewrap .slidelist>li {
+	transform: translateX(0%);
+}
+
+.section [id="slide02"]:checked~.slidewrap .slidelist>li {
+	transform: translateX(-100%);
+}
+
+.section [id="slide03"]:checked~.slidewrap .slidelist>li {
+	transform: translateX(-200%);
+}
+
+/*  INPUT이 체크되면 변화값이 좌우 슬라이드 버튼을 담고 있는 div 까지 전달되는 스타일 */
+.section [id="slide01"]:checked~.slidewrap .control01 {
+	display: block;
+}
+
+.section [id="slide02"]:checked~.slidewrap .control02 {
+	display: block;
+}
+
+.section [id="slide03"]:checked~.slidewrap .control03 {
+	display: block;
+}
+.slidewrap>.slidelist>li img{
+	position: absolute;
+	top: 15px;
+	left: 10px;
+	width: 280px;
+	height: 350px;
+	padding: 10px;
+	border: 2px solid rgba(0, 0, 0, 0.151);
+	border-radius: 5%;
+}

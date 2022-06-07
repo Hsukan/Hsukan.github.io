@@ -1,0 +1,205 @@
+html{
+	background-color: white;
+	scroll-behavior: smooth;
+	font-family: 'Roboto Mono';
+}
+body {
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+	color: #222;
+	background: #efefef;
+	border: 2px solid rgba(0, 0, 0, 0.342);
+}
+#insta{
+	position: absolute;
+	width: 35px;
+	right: 10px;
+	top: 10px;
+	
+}
+#facebook{
+	position: absolute;
+	width: 25px;
+	right: 58px;
+	top: 15px;
+}
+
+ul {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 50px;
+	/* background: #959DA5; */
+	background: #c8cacc;
+	border-bottom: 1px solid #333;
+	margin: 0;
+	padding: 10px 16px 0;
+	list-style: none;
+}
+ul a::before {
+	position: absolute;
+	top: -9px;
+	left: 35px;
+	overflow: hidden;
+	padding: 10px 0;
+	max-width: 0;
+	/* color: #fff; */
+	color: #000000;
+	content: attr(data-hover);
+	transition: max-width 1s;
+}
+
+ul a:hover::before {
+	max-width: 100%;
+}
+ul li {
+	float: left;
+	margin: 0 20px 0 0;
+	position: relative;
+	padding: 0;
+}
+ul a {
+	display: block;
+	/* color: #000000b0; */
+	color: #fff;
+	text-decoration: none;
+	padding: 0 35px;
+	line-height: 50px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 1.2em;
+	/* background-color: rgb(199, 219, 255); */
+	background-color: rgb(212, 227, 255);
+	border: 1px solid #333;
+	border-bottom: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	/* position:relative; */
+}
+ul li.current a {
+	background: #efefef;
+	color: #222;
+	height: 50px;
+	text-shadow: #fff 0 1px 0;
+}
+section{
+	height: 100vh;
+
+}
+.sticky{
+	position: sticky;
+	top: 0px;
+	z-index: 999; /* z축기준 값이 클수록 위에 위치 */
+}
+.topfix{
+	width: 75px;
+	height: 75px;
+	background-color: lightgrey;
+	right: 20px;
+	bottom: 70px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	position: fixed;
+}
+.topfix a{
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.836);
+}
+footer{
+	height: 100px;
+}
+/* ---------------------------------------------- */
+body .contain {
+	width: 500px;
+	height: 600px;
+	margin: 100px auto 0;
+	background-color: #ffffffbd;
+	box-shadow: rgba(0, 0, 0, 0.192) 0px 10px 40px;
+	border-radius: 5%;
+}
+
+article{
+	width: 70%;
+	padding-top: 45px;
+	margin: 0 auto;
+}
+
+body .contain .tabs {
+	margin-bottom: 29px;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+body .contain .tabs .tab {
+	display: inline-block;
+	margin-bottom: -1px;
+	padding: 20px 15px 10px;
+	cursor: pointer;
+	border-bottom: 1px solid #d9d9d9;
+}
+
+body .contain .tabs .tab a {
+	font-size: 11px;
+	text-decoration: none;
+	color: #d9d9d9;
+	transition: all 0.2s ease-in-out;
+}
+
+body .contain .tabs .tab.active a,
+body .contain .tabs .tab:hover a {
+	color: #263238;
+}
+
+body .contain .tabs .tab.active {
+	border-bottom: 1px solid #000000;
+}
+
+form {
+	position: relative;
+	height: 287px;
+}
+input.inpt {
+	font-size: 14px;
+	width: 93%;
+	margin-bottom: 12px;
+	padding: 16px 13px;
+	color: black;
+	border: 1px solid #d9d9d9;
+	border-radius: 15px;
+}
+
+input.submit {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 42px;
+	width: 100%;
+	height: 50px;
+	cursor: pointer;
+	border: 1px solid #263238;
+	background-color: white;
+	border-radius: 8px;
+	letter-spacing: 3px;
+	margin-top: 10px;
+}
+input.submit:hover {
+	background-color: #263238;
+	color: #ffffff;
+	transition: all 0.2s;
+}
+.submit-wrap {
+	position: absolute;
+	bottom: -100px;
+	width: 100%;
+}
+.why{
+	height: 50vh;
+}
+/* 크롬 자동완성 autofill 없애기 */
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member</title>
+    <link rel="stylesheet" href="css/04stylemember.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="container">
+        <header class="sticky">
+            <nav>
+                <ul id="indexMenu">
+                    <li><a href="00index.html" data-hover="Home">Home</a></li>
+                    <li><a href="01introduce.html" data-hover="introduce">introduce</a></li>
+                    <li><a href="02interest.html" data-hover="interest">interest</a></li>
+                    <li><a href="03roadmap.html" data-hover="roadmap">roadmap</a></li>
+                    <li class="current"><a href="04member.html">resister</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.instagram.com/hsukan/" target="_blank"><img src="image/인스타.png" alt="인스타" id="insta"></a>
+            <a href="#"><img src="image/페이스북.png" alt="페이스북" id="facebook"></a>
+            <br><br><br>
+        </header>
+        <section class="contain">
+            <article>
+                <div class="tabs">
+                    <span class="tab signin"><a href="04member.html">LOG IN</a></span>
+                    <span class="tab signup active">SIGN UP</span>
+                </div>
+                <div>
+                    <div  class="content">
+                        <form action="javascript:idCheck();" name="userFrm">
+                            <input type="text" name="username" id="username" class="inpt" required
+                                placeholder="Your name">
+                            <input type="email" name="email" id="email" class="inpt" required
+                                placeholder="Your email">
+                            <input type="password" name="password" id="password" class="inpt" required
+                                placeholder="Your password">
+                            <input type="password" name="passwordcheck" id="passwordcheck" class="inpt" required
+                                placeholder="Password check">
+                            <input type="tel" name="tel" id="tel" class="inpt" required
+                                placeholder="Phone Number">
+                            <div class="submit-wrap">
+                                <input type="submit" value="SIGN UP" class="submit" id="signup">
+                            </div>
+                        </form>
+                        <br>
+                    </div>
+                    <div class="why"></div>
+                </div>
+            </article>
+        </div>
+        <footer>
+        </footer>
+    <div class="topfix">
+        <a href="#top">TOP</a>
+    </div>
+    <script>
+        class User{
+            constructor(username, email, password, tel, date = Date.now()){
+                this.username = username;
+                this.email = email;
+                this.password = password;
+                this.tel = tel;
+                this.date = date;
+            }
+        }
+
+        const idCheck = () => {
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            const emailVal = email.value;
+            console.log(users, emailVal);
+
+            for(let a of users){
+                if(emailVal === a.email){
+                    alert("동일한 email이 있습니다.")
+                    email.select();
+                    return;
+                }
+            }
+            saveUser();
+        };
+
+        const saveUser = () => {
+            //사용자 입력값 처리
+            const usernameVal = username.value;
+            const emailVal = email.value;   
+            const passwordVal = password.value;
+            const telVal = tel.value;
+
+            const user = new User(usernameVal, emailVal, passwordVal, telVal);
+
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+            users.push(user);
+            // console.log(users);
+
+            const data = JSON.stringify(users);
+            // console.log(data);
+
+            const regexp = /^.{4,}$/;
+            if(regexp.test(passwordVal)){
+                if(passwordVal === passwordcheck.value){
+                    if(phoneNumCheck(telVal)){
+                        localStorage.setItem('users', data);
+                        document.userFrm.reset();
+                        alert("회원가입 성공!")
+                    }
+                    else{
+                        alert("번호는 하이폰(-)없이 숫자만 11자리 입력해주세요.")
+                        tel.select();
+                    }
+                }
+                else{
+                    alert("비밀번호가 일치하지않습니다.")
+                    passwordcheck.select();
+                }
+            }
+            else{
+                alert("비밀번호는 4자리이상이여야 합니다.");
+                password.select();
+            }
+
+        };
+
+        const phoneNumCheck = (num) => {
+                if(num.length !== 11){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+        };
+    </script>
+</body>
+
+</html>

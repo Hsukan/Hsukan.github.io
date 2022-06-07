@@ -1,0 +1,211 @@
+html{
+	background-color: white;
+	scroll-behavior: smooth;
+	font-family: 'Roboto Mono';
+}
+body {
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+	color: #222;
+	background: #efefef;
+	border: 2px solid rgba(0, 0, 0, 0.342);
+}
+#insta{
+	position: absolute;
+	width: 35px;
+	right: 10px;
+	top: 10px;
+	
+}
+#facebook{
+	position: absolute;
+	width: 25px;
+	right: 58px;
+	top: 15px;
+}
+
+ul {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 50px;
+	/* background: #959DA5; */
+	background: #c8cacc;
+	border-bottom: 1px solid #333;
+	margin: 0;
+	padding: 10px 16px 0;
+	list-style: none;
+}
+ul a::before {
+	position: absolute;
+	top: -9px;
+	left: 35px;
+	overflow: hidden;
+	padding: 10px 0;
+	max-width: 0;
+	/* color: #fff; */
+	color: #000000;
+	content: attr(data-hover);
+	transition: max-width 1s;
+}
+
+ul a:hover::before {
+	max-width: 100%;
+}
+ul li {
+	float: left;
+	margin: 0 20px 0 0;
+	position: relative;
+	padding: 0;
+}
+ul a {
+	display: block;
+	/* color: #000000b0; */
+	color: #fff;
+	text-decoration: none;
+	padding: 0 35px;
+	line-height: 50px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 1.2em;
+	/* background: rgb(211, 210, 235); */
+	background-color: rgb(212, 227, 255);
+	border: 1px solid #333;
+	border-bottom: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	/* position:relative; */
+}
+ul li.current a {
+	background: #efefef;
+	color: #222;
+	height: 50px;
+	text-shadow: #fff 0 1px 0;
+}
+section{
+	position: relative;
+	height: 1520px;
+
+}
+.sticky{
+	position: sticky;
+	top: 0px;
+	z-index: 999; /* z축기준 값이 클수록 위에 위치 */
+}
+.topfix{
+	width: 75px;
+	height: 75px;
+	background-color: lightgrey;
+	right: 20px;
+	bottom: 70px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	position: fixed;
+}
+.topfix a{
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.836);
+}
+/* ---------------------------------------------------------------- */
+.myimg{
+	/* 335씩 3개 */
+	width: 1005px; 
+	border: 1px solid black;
+	padding: 5px;
+	margin: 0 auto;
+	height: 1120px;
+}
+.profile{
+	border: 5px solid rgb(255, 255, 255);
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin: 50px 0 0 50px;
+}
+.profile img{
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+.profile span{
+	font-weight: bold;
+	font-size: 1.5em;
+	margin-left: 30px;
+}
+.circle{
+	width: 1005px;
+	height: 90px;
+	margin: 30px auto 5px auto;
+	/* margin-top: 30px; */
+}
+.circle div{
+	background-color: rgb(180, 204, 248);
+	width: 70px;
+	height: 70px;
+	display: inline-block;
+	border-radius: 50%;
+	border: 8px double rgb(255, 255, 255);
+	margin: 0 50px 0 50px;
+}
+.circont{
+	width: 850px;
+	height: 50px;
+	margin-bottom: 5px;
+	margin-left: 87px;
+}
+.circont span{
+	font-size: 1.2em;
+	margin-right: 161px;
+}
+.instaheader{
+	position: relative;
+	top: 0;
+	width: 280px;
+	height: 50px;
+	border-bottom: 5px solid rgb(218, 218, 218);
+	padding: 5px;
+	float: left;
+	margin-left: 37px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+#cur{
+	border-bottom: 4px solid black;
+}
+.instaheader #insta1{
+	position: absolute;
+	left: 43%;
+	width: 50px;
+}
+.instaheader #insta2{
+	position: absolute;
+	left: 45%;
+	width: 50px;
+	opacity: 0.4;
+}
+.instaheader #insta3{
+	position: absolute;
+	left: 36%;
+	width: 80px;
+	opacity: 0.1;
+}
+.line img{
+	width: 310px;
+	height: 335px;
+	border: 1px solid white;
+	padding: 3px;
+}
+.line{
+	text-align: center;
+}
+.img-wrapper img{
+	transition-duration: .3s;
+}
+.img-wrapper img:hover{
+	transform: scale(1.03);
+}

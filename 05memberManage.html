@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>manage</title>
+    <style>
+        table{
+            border: 1px solid black;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+        th, td{
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        window.onload = () => renderUser();
+    </script>
+</head>
+<body>
+    <h1>회원목록</h1>
+    <table id="tb-user">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>name</th>
+                <th>email</th>
+                <th>password</th>
+                <th>phone</th>
+                <th>date</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        // console.log(localStorage.getItem("users"));
+
+        const renderUser = (users = JSON.parse(localStorage.getItem("users"))) => {
+            if(!users) return;
+            const tbody = document.querySelector("#tb-user tbody")
+            tbody.innerHTML = "";
+            users.map((users, index) => {
+                const {username, email, password, tel, date} = users;
+                // console.log(username, email, password, tel, date);
+                return `<tr>
+                    <td>${index + 1}</td>
+                    <td>${username}</td>
+                    <td>${email}</td>
+                    <td>${password}</td>
+                    <td>${tel}</td>
+                    <td>${datetimeFormatter(date)}</td>
+                </tr>`;
+            })
+            .forEach((tr) => {
+                tbody.innerHTML += tr;
+            });
+        };
+
+        const datetimeFormatter = (millis) => {
+            const d = new Date(millis);
+            const f = (n) => n < 10 ? '0' + n : n;
+            const yyyy = d.getFullYear();
+            const mm = f(d.getMonth() + 1);
+            const dd = f(d.getDate());
+            const hh = f(d.getHours());
+            const mi = f(d.getMinutes());
+            return `${yyyy}/${mm}/${dd} ${hh}:${mi}`;
+        };
+    </script>
+</body>
+</html>

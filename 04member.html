@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>member</title>
+    <link rel="stylesheet" href="css/04stylemember.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <header class="sticky">
+            <nav>
+                <ul id="indexMenu">
+                    <li><a href="00index.html" data-hover="Home">Home</a></li>
+                    <li><a href="01introduce.html" data-hover="introduce">introduce</a></li>
+                    <li><a href="02interest.html" data-hover="interest">interest</a></li>
+                    <li><a href="03roadmap.html" data-hover="roadmap">roadmap</a></li>
+                    <li class="current"><a href="04member.html">resister</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.instagram.com/hsukan/" target="_blank"><img src="image/인스타.png" alt="인스타" id="insta"></a>
+            <a href="#"><img src="image/페이스북.png" alt="페이스북" id="facebook"></a>
+            <br><br><br>
+        </header>
+        <section class="contain">
+            <article>
+                <div class="tabs">
+                    <span class="tab signin active">LOG IN</span>
+                    <span class="tab signup"><a href="04member(signup).html">SIGN UP</a></span>
+                </div>
+                <div>
+                    <div  class="content">
+                        <form action=""  name="userFrm">
+                            <input type="email" name="email" id="email" class="inpt" required="required"
+                                placeholder="Your email">
+                            <input type="password" name="password" id="password" class="inpt" required="required"
+                                placeholder="Your password">
+                            <div class="submit-wrap">
+                                <input type="button" value="LOG IN" class="submit" onclick="login();">
+                                <!-- <input type="button" value="ADMIN" class="submit" id="admin"> -->
+                            </div>
+                        </form>
+                    </div>
+                    <div class="why"></div>
+                </div>
+            </article>
+        </section>
+    </div>
+    <footer>
+    </footer>
+    <div class="topfix">
+        <a href="#top">TOP</a>
+    </div>
+
+    <script>
+        // admin.onclick = () => {
+        //     const password = prompt("비밀번호를 입력하세요")
+        //     if(Number(password) === 1234){
+        //         open("05memberManage.html", "popup", "width = 700px, height = 400px, left = 200px, top = 200px")
+        //     }
+        //     else{
+        //         prompt("비밀번호가 틀렸습니다.")
+        //     }
+        // }
+
+        const login = () => {
+            const emailVal = email.value;   
+            const passwordVal = password.value;
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // console.log(users);
+            // console.log(emailVal, passwordVal);
+            const regexp = /^.{4,}$/;
+
+
+            //비밀번호 검사
+            for(let i = 0; i < users.length; i++){
+                if(regexp.test(passwordVal)){
+                    if(users[i].email === emailVal && users[i].password !== passwordVal){
+                        alert('비밀번호가 틀렸습니다.');
+                        password.select();
+                        return;
+                    }
+                }
+                else{
+                    alert("비밀번호는 4자리이상이여야 합니다.");
+                    password.select();
+                    return;
+                }
+            }
+            
+            //회원목록을 가져와서 로그인
+            for(let a of users){
+                if(a.email === emailVal && a.password === passwordVal){
+                    alert('로그인 성공!');
+                    document.userFrm.reset();
+                    return;
+                }
+            }
+
+            //관리자 로그인
+            if(emailVal === 'admin@admin'){
+                if(Number(passwordVal) === 1234){
+                    open("05memberManage.html", "popup", "width = 700px, height = 400px, left = 200px, top = 200px");
+                    document.userFrm.reset();
+                    return;
+                }
+                else{
+                    alert('비밀번호가 틀렸습니다.');
+                    password.select();
+                    return;
+                }
+            }
+
+            //회원목록이 없을 때
+            if(users.length === 0){
+                if(!regexp.test(passwordVal)){
+                    alert("비밀번호는 4자리이상이여야 합니다.");
+                    password.select();
+                    return;
+                }
+                else{
+                    alert("가입된 회원이 없습니다. 회원가입을 진행하겠습니다.");
+                    open("04member(signup).html", "_self");
+                }
+            }
+            else{
+                alert('존재하지 않는 이메일입니다.');
+                email.select();
+            }
+
+        };
+    </script>
+</body>
+
+</html>

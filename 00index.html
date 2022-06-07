@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="css/00styleindex.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <header class="sticky">
+            <nav>
+                <ul id="indexMenu">
+                    <li class="current"><a href="00index.html">Home</a></li>
+                    <li><a href="01introduce.html" data-hover="introduce">introduce</a></li>
+                    <li><a href="02interest.html" data-hover="interest">interest</a></li>
+                    <li><a href="03roadmap.html" data-hover="roadmap">roadmap</a></li>
+                    <li><a href="04member.html" data-hover="resister">resister</a></li>
+                </ul>
+            </nav>
+            <a href="https://www.instagram.com/hsukan/" target="_blank"><img src="image/인스타.png" alt="인스타"
+                    id="insta"></a>
+            <a href="#"><img src="image/페이스북.png" alt="페이스북" id="facebook"></a>
+            <br><br><br>
+        </header>
+        <section>
+            <label class="switch-button">
+                <input type="checkbox" onchange="start();">
+                <span class="onoff-switch"></span>
+            </label>
+            <div class="main" id="main">
+                <p class="maintext" id="text1">&nbsp;</p>
+                <p class="maintext" id="text2">&nbsp;</p>
+                <p class="maintext" id="text3">About Me</p>
+                <p class="maintext" id="text4">&nbsp;</p>
+                <p class="maintext" id="text5">&nbsp;</p>
+            </div>
+        </section>
+        <footer>
+            <div>
+                <pre>
+
+    KH정보교육원 ｜ 사업자등록번호 : 851-87-00622 ｜ 서울 강남 제2014-01호
+
+    강남지원 1관 : 서울특별시 강남구 테헤란로14길 6 남도빌딩 2F, 3F, 4F, 5F, 6F
+    강남지원 2관 : 서울특별시 강남구 테헤란로10길 9 그랑프리 빌딩 4F, 5F, 7F
+    
+    Copyright © 1998-2022 KH Information Educational Institute All Right Reserved
+                </pre>
+        </footer>
+    </div>
+    <div class="topfix">
+        <a href="#top">TOP</a>
+    </div>
+
+    <script>
+        const check = document.querySelector("input");
+
+        const start = () => {
+            if (check.checked)
+                document.getElementById("main").classList.add("mainstart");
+            else
+                document.getElementById("main").classList.remove("mainstart");
+        }
+
+    </script>
+</body>
+
+</html>

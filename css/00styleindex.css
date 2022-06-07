@@ -1,0 +1,195 @@
+html{
+	background-color: white;
+	scroll-behavior: smooth;
+	font-family: 'Roboto Mono';
+}
+body {
+	position: relative;
+	width: 1024px;
+	margin: 0 auto;
+	padding: 0;
+	color: #222;
+	background: #efefef;
+	border: 2px solid rgba(0, 0, 0, 0.342);
+}
+#insta{
+	position: absolute;
+	width: 35px;
+	right: 10px;
+	top: 10px;
+	
+}
+#facebook{
+	position: absolute;
+	width: 25px;
+	right: 58px;
+	top: 15px;
+}
+
+ul {
+	position: absolute;
+	left: 0;
+	right: 0;
+	height: 50px;
+	/* background: #959DA5; */
+	background: #c8cacc;
+	border-bottom: 1px solid #333;
+	margin: 0;
+	padding: 10px 16px 0;
+	list-style: none;
+}
+ul a::before {
+	position: absolute;
+	top: -9px;
+	left: 35px;
+	overflow: hidden;
+	padding: 10px 0;
+	max-width: 0;
+	/* color: #fff; */
+	color: #000000;
+	content: attr(data-hover);
+	transition: max-width 1s;
+}
+
+ul a:hover::before {
+	max-width: 100%;
+}
+ul li {
+	float: left;
+	margin: 0 20px 0 0;
+	position: relative;
+	padding: 0;
+}
+ul a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 0 35px;
+	line-height: 50px;
+	height: 50px;
+	font-weight: bold;
+	font-size: 1.2em;
+	background-color: rgb(212, 227, 255);
+	border: 1px solid #333;
+	border-bottom: none;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	/* position:relative; */
+}
+ul li.current a {
+	background: #efefef;
+	color: #222;
+	height: 50px;
+	text-shadow: #fff 0 1px 0;
+}
+section{
+	height: 100vh;
+
+}
+.sticky{
+	position: sticky;
+	top: 0px;
+	z-index: 999; /* z축기준 값이 클수록 위에 위치 */
+}
+.topfix{
+	width: 75px;
+	height: 75px;
+	background-color: lightgrey;
+	right: 20px;
+	bottom: 70px;
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+	position: fixed;
+}
+.topfix a{
+	text-decoration: none;
+	color: rgba(0, 0, 0, 0.836);
+}
+footer{
+	/* background-color: #959da5a1; */
+	background: #b7b9bb;
+	height: 15vh;
+}
+.main{
+	position: relative;
+	top: 480px;
+	left: 535px;
+	width: 500px;
+	font-size: 4.5em;
+	transform: translate(-50%,-50%);
+	text-align: center;
+	border: 4px solid rgba(0, 0, 0, 0.541);
+	border-radius: 10%;
+	overflow: hidden;
+}
+.main p{
+	margin: 0;
+	color: #efefef;
+}
+.main:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #383838cb;
+    border-radius: 100%;
+    transform: scale(0);
+    transition-duration: 3.5s;
+}
+.mainstart:before{
+	transform: scale(2);
+}
+/* ------------------------- */
+.switch-button {
+	position: relative;
+	display: inline-block;
+	width: 100px;
+	height: 50px;
+	top: 170px;
+	left: 480px;
+}
+
+.switch-button input {
+	display: none;
+}
+
+/* 스위치 박스 */
+.onoff-switch {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius:20px;
+	background-color: #ccc;
+	box-shadow: inset 1px 5px 1px #999;
+	transition: .4s;
+}
+
+.onoff-switch:before {
+	position: absolute;
+	content: "";
+	height: 40px;
+	width: 40px;
+	left: 4px;
+	bottom: 4px;
+	background-color: #fff;
+	transition: .4s;
+	border-radius:20px;
+}
+
+.switch-button input:checked + .onoff-switch {
+	background-color: rgb(212, 227, 255);;
+	box-shadow: inset 1px 5px 1px #8bb1ca;
+}
+
+.switch-button input:checked + .onoff-switch:before {
+	transform: translateX(52px);
+}
